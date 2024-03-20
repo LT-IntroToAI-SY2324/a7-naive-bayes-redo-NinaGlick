@@ -72,11 +72,11 @@ class BayesClassifier:
         # write something like this to track progress (note the `# type: ignore` comment
         # which tells mypy we know better and it shouldn't complain at us on this line):
         for index, filename in enumerate(files, 1): # type: ignore
-            print("------------------------------------------")
-            print(f"Training {filename} on file {index} of {len(files)}")
+            # print("------------------------------------------")
+            # print(f"Training {filename} on file {index} of {len(files)}")
         #     <the rest of your code for updating frequencies here>
             text = self.load_file(os.path.join(self.training_data_directory, filename))
-            print(text)
+            # print(text)
 
         # we want to fill pos_freqs and neg_freqs with the correct counts of words from
         # their respective reviews
@@ -95,12 +95,15 @@ class BayesClassifier:
         # those tokens. We've asked you to write a function `update_dict` that will make
         # your life easier here. Write that function first then pass it your list of
         # tokens from the file and the appropriate dictionary
-            print(f"positive? {filename.startswith(self.pos_file_prefix)}")
-            print(f"negative? {filename.startswith(self.neg_file_prefix)}")
-
+            # print(f"positive? {filename.startswith(self.pos_file_prefix)}")
+            # print(f"negative? {filename.startswith(self.neg_file_prefix)}")
+            tokens=self.tokenize(text)
+            # print(tokens)
+            # consitionals that adds to appropriate dictionary
+            self.update_dict(tokens, self.pos_freqs)
         # for debugging purposes, it might be useful to print out the tokens and their
         # frequencies for both the positive and negative dictionaries
-        
+        print(self.pos_freqs)
 
         # once you have gone through all the files, save the frequency dictionaries to
         # avoid extra work in the future (using the save_dict method). The objects you
@@ -230,8 +233,11 @@ class BayesClassifier:
             freqs - dictionary of frequencies to update
         """
         # TODO: your work here
-        pass  # remove this line once you've implemented this method
-
+        for word in words:
+            if word in freqs:
+                freqs[word]+=1
+            else:
+                freqs[word]=1
 
 if __name__ == "__main__":
     # uncomment the below lines once you've implemented `train` & `classify`
