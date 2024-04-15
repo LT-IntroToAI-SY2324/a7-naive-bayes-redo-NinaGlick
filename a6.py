@@ -321,3 +321,21 @@ if __name__ == "__main__":
     print(b.classify('rainy days are the worst'))
     print(b.classify('computer science is terrible'))
     pass
+
+print("\nThe following is to test out the method with each groups responses")
+print(b.classify("I'm so excited for the solar eclipse! It's going to be so cool!"))
+print(b.classify("I really love the movie cocaine bear!"))
+print(b.classify('Cocaine bear is my favorite movie! It is so funny and the story is awesome!'))
+print(b.classify('If I could only watch one movie for the rest of my life, I would choose cocaine bear!'))
+
+print(b.classify('The solar eclipse is going to be boring, why should we waste our time?'))
+print(b.classify('I don’t like westerns. They are boring movies'))
+print(b.classify('Westerns all have the same plot, and they aren’t fun to watch'))
+print(b.classify('Westerns stink.'))
+
+print(b.classify('"Cocaine Bear" delights in its own dysfunction and unapologetically revels in it for 90 minutes straight.'))
+print(b.classify("French New Wave director Jean-Luc Godard allegedly said that all you needed for a good movie was “a girl and a gun.” If the movie is called “Cocaine Bear,” all you need is yayo and a clone of Yogi"))
+print(b.classify("Cocaine Bear will, in time, stand as a dated artifact of the current moment's vogue for viral animal videos and epic memes."))
+print(b.classify("As such, the insanity that is Cocaine Bear is only reserved for its trailer, which promises an insane ride at the movies, only for the movie to be a total whimper."))
+
+
